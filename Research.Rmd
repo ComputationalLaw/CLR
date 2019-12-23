@@ -1,0 +1,22 @@
+## Research papers and projects
+
+
+
+```{r, echo=FALSE}
+#install.packages('gsheet')
+library(gsheet)
+research <-gsheet2tbl('https://docs.google.com/spreadsheets/d/1nlvKhc7nlLhd7mSLFbVlaXkut-kB2p1dzieNbAwCrBA/edit#gid=0')
+
+```
+
+```{r,echo=FALSE}
+# convert to data.frame
+research <- as.data.frame(research, header=TRUE)
+```
+
+
+```{r, echo= FALSE, message=FALSE, warning=FALSE}
+library(DT)
+datatable(research,filter = 'top', options = list(pageLength = 10, autoWidth = TRUE, escape = FALSE))
+```
+
